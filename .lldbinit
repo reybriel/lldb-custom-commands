@@ -1,0 +1,8 @@
+command alias -h "Print in hex" -H "Print value in ObjC context in hexadecimal" -- cpx expression --format x --language objc --
+command alias -h "Evaluates an Objective-C expression printing out the desciption of it" -H "" -- cpo expression --language objc --object-description --
+command alias -h "Evaluates a Swift expression printing ou the description of it" -H "" -- spo expression --language swift --object-description --
+command regex rlook 's/(.+)/image lookup -rn %1/'
+command regex cgetcls 's/(.+)/cpo [%1 class]/'
+command regex sgetcls 's/(.+)/spo type(of: %1)/'
+command regex getcls 's/(([0-9|\4|\@|\[]).*)/cgetcls %1/' 's/(.+)/sgetcls %1/'
+command regex pjson 's/(.+)/po NSString.init(data: try! JSONSerialization.data(withJSONObject: try! JSONSerialization.jsonObject(with: %1, options: []), options: [.prettyPrinted]), encoding: String.Encoding.utf8.rawValue)!/'
