@@ -1,3 +1,6 @@
+settings set target.x86-disassembly-flavor intel
+settings set target.skip-prologue false
+
 command alias -h "Print in hex" -H "Print value in ObjC context in hexadecimal" -- cpx expression --format x --language objc --
 command alias -h "Evaluates an Objective-C expression printing out the desciption of it" -H "" -- cpo expression --language objc --object-description --
 command alias -h "Evaluates a Swift expression printing ou the description of it" -H "" -- spo expression --language swift --object-description --
